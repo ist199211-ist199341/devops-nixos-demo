@@ -1,13 +1,10 @@
 {
-  modulesPath,
-  config,
   lib,
   pkgs,
   ...
 }: {
   imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-    (modulesPath + "/profiles/qemu-guest.nix")
+    ./hardware.nix
     ./disk-config.nix
   ];
 
@@ -19,7 +16,7 @@
   ]);
 
   users.users.root.openssh.authorizedKeys.keys = [
-    # change this to your ssh key
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINlaWu32ANU+sWFcwKrPlqD/oW3lC3/hrA1Z3+ubuh5A dtc@bacchus"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0r4o+OjJ18Ue3L0KfNh7dyMQ+MsFLWAraBuUhH0mDM tomas@dragonfly"
   ];
 
