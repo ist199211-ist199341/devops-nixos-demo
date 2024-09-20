@@ -20,5 +20,11 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0r4o+OjJ18Ue3L0KfNh7dyMQ+MsFLWAraBuUhH0mDM tomas@dragonfly"
   ];
 
-  system.stateVersion = "23.11";
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+    };
+  };
+
+  system.stateVersion = "24.05";
 }
