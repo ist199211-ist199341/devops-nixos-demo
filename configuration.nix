@@ -1,4 +1,10 @@
-{ modulesPath, config, lib, pkgs, ... }: {
+{
+  modulesPath,
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
@@ -7,11 +13,10 @@
 
   services.openssh.enable = true;
 
-  environment.systemPackages = map lib.lowPrio (with pkgs ; [
+  environment.systemPackages = map lib.lowPrio (with pkgs; [
     curl
     gitMinimal
   ]);
-
 
   users.users.root.openssh.authorizedKeys.keys = [
     # change this to your ssh key
