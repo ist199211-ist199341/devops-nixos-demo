@@ -8,12 +8,14 @@
     disko,
     ...
   }: {
-    nixosConfigurations.spoon = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        disko.nixosModules.disko
-        ./configuration.nix
-      ];
+    nixosConfigurations = {
+      spoon = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          ./host-spoon.nix
+        ];
+      };
     };
   };
 }

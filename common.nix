@@ -3,11 +3,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./hardware.nix
-    ./disk-config.nix
-  ];
-
   services.openssh.enable = true;
 
   environment.systemPackages = map lib.lowPrio (with pkgs; [
@@ -25,6 +20,4 @@
       experimental-features = ["nix-command" "flakes"];
     };
   };
-
-  system.stateVersion = "24.05";
 }
