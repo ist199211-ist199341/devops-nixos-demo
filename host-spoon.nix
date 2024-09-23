@@ -28,6 +28,12 @@
     };
   };
 
+  services.minecraft-server = {
+    enable = true;
+    eula = true;
+    openFirewall = true;
+  };
+
   # Allow connections to nginx through firewall
   networking.firewall.allowedTCPPorts = [80];
 
