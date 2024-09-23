@@ -16,6 +16,13 @@
           ./host-spoon.nix
         ];
       };
+      fork = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          ./host-fork.nix
+        ];
+      };
     };
   };
 }
