@@ -51,8 +51,9 @@
     Wednesday, 25#super[th] of September, 2024
 
     #notes(
-      speaker: "???",
-      lorem(5),
+      speaker: "Diogo",
+      "introduce topic",
+      "introduce presenters",
     )
   ],
   authors: (
@@ -76,12 +77,12 @@
   ]
 
   #notes(
-    speaker: "???",
-    lorem(5),
+    speaker: "Diogo",
+    "nixlang/nix/nixos/nixpkgs",
   )
 ]
 
-#slide(title: "What is Nix/NixOS?")[
+#slide(title: "Why Nix/NixOS?")[
   #v(1em)
   #grid(
     columns: (1fr, 1fr, 1fr),
@@ -96,8 +97,10 @@
   )
 
   #notes(
-    speaker: "???",
-    lorem(5),
+    speaker: "Tomás",
+    "Reproducible: works on my machine, works on every machine",
+    "Declarative: infrastructure as code, allows you to copy code from stackoverflow and it will work",
+    "Reliable: if something goes bad, you can always rollback and avoid being fired",
   )
 ]
 
@@ -107,8 +110,10 @@
   - *nixos-rebuild*, update existing host
 
   #notes(
-    speaker: "???",
-    lorem(5),
+    speaker: "Tomás",
+    "declare disk partitions with disko",
+    "provision a new host with nixos-anywhere",
+    "update the host with nixos-rebuild",
   )
 ]
 
@@ -116,14 +121,14 @@
   Demo
 ]
 
-
 #new-section-slide("Conclusion")
 
 #big-picture-slide()[
-  #lorem(10)
+  With NixOS, you can declare your infrastructure once
+  and deploy it forever
   #notes(
-    speaker: "???",
-    lorem(5)
+    speaker: "Diogo",
+    "Declare once, deploy forever, wherever"
   )
 ]
 
