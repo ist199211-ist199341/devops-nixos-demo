@@ -9,17 +9,24 @@
     ./hardware.nix
   ];
 
-  # Automatically performs configuration of nginx, redis and postgresql as well
+  # Automatically performs configuration of nginx,
+  # redis and postgresql as well
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud29; # force specific version of nextcloud
+    # force specific version of nextcloud
+    package = pkgs.nextcloud29;
     hostName = "nextcloud.acme-bnss.pt";
-    database.createLocally = true; # automatically uses postgresql through sockets
+    # automatically uses postgresql through sockets
+    database.createLocally = true;
     configureRedis = true;
     maxUploadSize = "2G";
 
     config = {
-      adminpassFile = toString (pkgs.writeText "nc-first-install-pwd" "demo-password");
+      adminpassFile = toString (
+        pkgs.writeText
+        "nc-first-install-pwd"
+        "demo-password"
+      );
       dbtype = "pgsql";
     };
 
