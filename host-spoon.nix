@@ -42,5 +42,7 @@
     ];
   };
 
+  networking.hostName = "spoon";
+
   system.stateVersion = "24.05";
 }
